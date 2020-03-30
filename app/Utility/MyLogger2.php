@@ -12,10 +12,8 @@ class MyLogger2 implements ILogger
     {
         if(self::$logger == null) 
         {
-            self::$logger = new Logger('MyApp');
-            $stream = new StreamHandler('storage/logs/myapp.log', Logger::DEBUG);
-            $stream->setFormatter(new LineFormatter("%datetime% : %level_name% : %message% : %context%\n", "g:iA n/j/Y"));
-            self::$logger->pushHandler($stream);
+            self::$logger = new \Monolog\Logger('MyApp'); 
+            self::$logger->pushHandler(new \Monolog\Handler\LogglyHandler('2e6d8e9b-be11-4c50-9c06-66d22bd6fe26/tag/laravel323'));
         }
         return self::$logger;
     }
