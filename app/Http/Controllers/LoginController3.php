@@ -51,7 +51,7 @@ class LoginController3 extends Controller
         {
             MyLogger2::error("Exception: ", array("message" => $e2->getMessage()));
             
-            return view("systemException");
+            return view("SystemException");
         }
     
     }
